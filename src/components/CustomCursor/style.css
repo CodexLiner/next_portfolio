@@ -1,6 +1,9 @@
 * {
   cursor: none;
 }
+.pointer{
+  cursor: pointer;
+}
 .main-cursor,
 .secondary-cursor {
   z-index: 10000;

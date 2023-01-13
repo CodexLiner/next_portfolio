@@ -10,6 +10,33 @@ import { useEffect, useRef } from 'react';
 
 // ----------------------------------------------------------------------
 
+const SOCIAL = [ {
+    img: 'git.svg',
+    link: 'https://github.com/CodexLiner',
+  },
+  {
+    img: 'in.svg',
+    link: 'https://www.linkedin.com/in/meenagopal24',
+  },
+ 
+  {
+    img: 'tweet.svg',
+    link: 'https://twitter.com/meenagopal_24',
+  },
+  {
+    img: 'insta.svg',
+    link: 'https://www.instagram.com/meenagopal24',
+  },
+  {
+    img: 'wa.svg',
+    link: 'wa.me/+919399846909',
+  },
+];
+
+const social_open = (link) => {
+  window.open(link, '_blank');
+};
+
 const RootStyle = styled(m.div)(({ theme }) => ({
   position: 'relative',
   backgroundColor: theme.palette.primary[900],
@@ -173,11 +200,14 @@ export default function HomeHero() {
               </m.div>
             </m.div>
 
-            <m.div variants={varFade().inRight}>
-              <Typography variant="h5" sx={{ mt : -1.5 , fontFamily: 'cursive', fontWeight: 'light', color: 'common.white' }}>
+            {/* <m.div variants={varFade().inRight}>
+              <Typography
+                variant="h5"
+                sx={{ mt: -1.5, fontFamily: 'cursive', fontWeight: 'light', color: 'common.white' }}
+              >
                 Programmer | Learner | Student
               </Typography>
-            </m.div>
+            </m.div> */}
 
             <m.div variants={varFade().inRight}>
               <NextLink href="/resume" target="_blank" passHref>
@@ -198,18 +228,30 @@ export default function HomeHero() {
                 </Typography>
               </m.div>
 
-              <Stack ref={secondary} direction="row" spacing={1.5} justifyContent={{ xs: 'left', md: 'flex-start' }}>
-                {/* <m.div variants={varFade().inRight}>
-                  <Typography variant="overline" sx={{ color: 'primary.light' }}>
-                    Checkout My
-                  </Typography>
-                </m.div> */}
-
-                {['ic_sketch', 'ic_figma', 'ic_js', 'ic_ts', 'ic_nextjs'].map((resource) => (
+              <Stack
+                ref={secondary}
+                direction="row"
+                spacing={1.5}
+                sx={{ cursor: 'pointer' }}
+                justifyContent={{ xs: 'left', md: 'flex-start' }}
+              >
+                {/* {['ic_sketch', 'ic_figma', 'ic_js', 'ic_ts', 'ic_nextjs'].map((resource) => (
                   <m.img
                     key={resource}
                     variants={varFade().inRight}
                     src={`https://minimal-assets-api.vercel.app/assets/images/home/${resource}.svg`}
+                  />
+                ))} */}
+
+                {SOCIAL.map((resource) => (
+                  <m.img
+                    className="pointer"
+                    onClick={() => {
+                      social_open(resource.link);
+                    }}
+                    key={resource}
+                    variants={varFade().inRight}
+                    src={`/images/social/${resource.img}`}
                   />
                 ))}
               </Stack>

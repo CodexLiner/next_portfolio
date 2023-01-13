@@ -1,10 +1,11 @@
 import { m } from 'framer-motion';
 // @mui
 import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Card, Container, Typography } from '@mui/material';
+import { Avatar, Box, Card, Chip, Container, Typography } from '@mui/material';
 // components
 import Image from '../../components/Image';
 import { MotionViewport, varFade } from '../../components/animate';
+import { Stack } from '@mui/system';
 
 const CARDS = [
   {
