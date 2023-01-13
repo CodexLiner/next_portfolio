@@ -37,6 +37,11 @@ const ContentStyle = styled((props) => <Stack spacing={4} {...props} />)(({ them
     margin: 'unset',
     textAlign: 'left',
   },
+  [theme.breakpoints.down('sm')]: {
+    textAlign: 'left',
+    paddingTop: theme.spacing(25),
+    paddingBottom: theme.spacing(1),
+  },
 }));
 
 const HeroOverlayStyle = styled(m.img)({
@@ -152,15 +157,15 @@ export default function HomeHero() {
                 </Typography>
               </Typography>
               <m.div variants={varFade().inRight}>
-                <Typography variant="h5" sx={{ color: 'common.white' }}>
-                  Programmer | Learner | Student
+                <Typography variant="unset" sx={{ letterSpacing : '10', color: 'common.white' }}>
+                  I am a Software Engineer
                 </Typography>
               </m.div>
             </m.div>
 
-            {/* <m.div variants={varFade().inRight}>
+            <m.div variants={varFade().inRight}>
               <Typography variant="h4" sx={{ color: 'common.white' }}>Programmer | Learner | Student</Typography>
-            </m.div> */}
+            </m.div>
 
             <m.div variants={varFade().inRight}>
               <NextLink href="/resume" target="_blank" passHref>
@@ -181,7 +186,7 @@ export default function HomeHero() {
                 </Typography>
               </m.div>
 
-              <Stack ref={secondary} direction="row" spacing={1.5} justifyContent={{ xs: 'center', md: 'flex-start' }}>
+              <Stack ref={secondary} direction="row" spacing={1.5} justifyContent={{ xs: 'left', md: 'flex-start' }}>
                 {/* <m.div variants={varFade().inRight}>
                   <Typography variant="overline" sx={{ color: 'primary.light' }}>
                     Checkout My

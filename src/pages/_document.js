@@ -35,10 +35,10 @@ export default class MyDocument extends Document {
 
           <meta
             name="description"
-            content="The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style"
+            content="xperienced Teaching Assistant with a demonstrated history of working in the e-learning industry. Skilled in Communication, English, Engineering, Programming, and Android. Strong education professional with a Bachelor of Technology - BTech focused in Computer Science from Medi-Caps University."
           />
-          <meta name="keywords" content="react,material,kit,application,dashboard,admin,template" />
-          <meta name="author" content="Minimal UI Kit" />
+          <meta name="keywords" content="meenagopal24,Gopal Meena,meena,meenagopal24,gopal,mg24,codexliner" />
+          <meta name="author" content="Gopal Meena" />
         </Head>
 
         <body>

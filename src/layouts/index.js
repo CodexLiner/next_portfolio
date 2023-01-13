@@ -21,8 +21,9 @@ export default function Layout({ variant = 'dashboard', children }) {
   }
 
   return (
-    <AuthGuard>
-      <DashboardLayout> {children} </DashboardLayout>
-    </AuthGuard>
+    <DashboardLayout> {children} </DashboardLayout>
+  //  { // <AuthGuard>
+  //   //   <DashboardLayout> {children} </DashboardLayout>
+  //   // </AuthGuard>}
   );
 }

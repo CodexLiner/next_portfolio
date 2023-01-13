@@ -17,6 +17,7 @@ import App from 'next/app';
 // utils
 import { getSettings } from '../utils/settings';
 import  '../utils/highlight';
+import useResponsive from 'src/hooks/useResponsive';
 
 // contexts
 import { SettingsProvider } from '../contexts/SettingsContext';
@@ -41,6 +42,8 @@ MyApp.propTypes = {
 export default function MyApp(props) {
   const { Component, pageProps, settings } = props;
 
+  const isDesktop = useResponsive('up', 'md');
+
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
@@ -51,7 +54,7 @@ export default function MyApp(props) {
 
       <CollapseDrawerProvider>
         <SettingsProvider defaultSettings={settings}>
-          <CustomCursor/>
+         {isDesktop? <CustomCursor/> : ''}
           <ThemeProvider>
             <MotionLazyContainer>
               <ThemeColorPresets>

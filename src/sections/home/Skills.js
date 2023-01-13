@@ -92,7 +92,7 @@ export default function Skills() {
         <Box
           sx={{
             textAlign: 'left',
-            mb: { xs: 10, md: 15 },
+            mb: { xs: 10, md: 10 },
           }}
         >
           <m.div variants={varFade().inUp}>

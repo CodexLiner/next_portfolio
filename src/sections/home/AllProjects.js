@@ -5,27 +5,52 @@ import { Box, Container, Typography, useTheme } from '@mui/material';
 // components
 import Image from '../../components/Image';
 import { MotionViewport, varFade } from '../../components/animate';
+import Masonry from '@mui/lab/Masonry';
+import Paper from '@mui/material/Paper';
+
+const heights = [150, 30, 90, 70, 90, 100, 150, 30, 50, 80];
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(0.5),
+  textAlign: 'center',
+  borderRadius: '2%',
+  color: theme.palette.text.secondary,
+}));
 
 // ----------------------------------------------------------------------
 
-const IMG = [...Array(10)].map(
-  (_, index) => `https://minimal-assets-api.vercel.app/assets/images/home/clean-${index + 1}.png`
-);
+// const IMG = [...Array(10)].map(
+//   (_, index) => `https://minimal-assets-api.vercel.app/assets/images/home/clean-${index + 1}.png`
+// );
+const IMG = [
+  'billing.jpg',
+  'budget.jpg',
+  'fill.png',
+  'cc.jpg',
+  'tiktok.jpg',
+  'call.png',
+  'todo.jpg',
+  'college.png',
+  'loc.jpeg',
+  'ext.jpg',
+];
 
 const RootStyle = styled('div')(({ theme }) => ({
-  paddingTop: theme.spacing(1),
+  paddingTop: theme.spacing(10),
   paddingBottom: theme.spacing(10),
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
-  maxWidth: 520,
-  margin: 'auto',
-  textAlign: 'center',
-  [theme.breakpoints.up('md')]: {
-    zIndex: 11,
-    textAlign: 'left',
-    position: 'absolute',
-  },
+  // maxWidth: 520,
+  // margin: 'auto',
+  // textAlign: 'center',
+  // [theme.breakpoints.up('md')]: {
+  //   zIndex: 11,
+  //   textAlign: 'left',
+  //   position: 'absolute',
+  // },
 }));
 
 export default function () {
@@ -56,8 +81,17 @@ export default function () {
             </Typography>
           </m.div>
         </ContentStyle>
+        <Box sx={{ minHeight: 253 }}>
+          <Masonry columns={4} spacing={2} defaultHeight={450} defaultColumns={4} defaultSpacing={1}>
+            {IMG.map((height, index) => (
+              <Item key={index} sx={{ height }}>
+                <Image sx={{ borderRadius: '2%' }} disabledEffect visibleByDefault alt={`clean-${index + 1}`} src={`../../images/${height}`} />
+              </Item>
+            ))}
+          </Masonry>
+        </Box>
 
-        <Box sx={{ position: 'relative' }}>
+        {/* <Box sx={{ position: 'relative' }}>
           {IMG.map((_, index) => (
             <Box
               key={index}
@@ -79,7 +113,7 @@ export default function () {
               />
             </Box>
           ))}
-        </Box>
+        </Box> */}
       </Container>
     </RootStyle>
   );

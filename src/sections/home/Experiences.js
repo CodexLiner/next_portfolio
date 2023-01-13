@@ -17,9 +17,9 @@ import Iconify from '../../components/Iconify';
 import { Block } from '../../sections/overview/Block';
 
 const RootStyle = styled('div')(({ theme }) => ({
-  paddingTop: theme.spacing(0),
+  paddingTop: theme.spacing(10),
   [theme.breakpoints.up('md')]: {
-    paddingBottom: theme.spacing(15),
+    paddingBottom: theme.spacing(10),
   },
 }));
 
@@ -80,7 +80,7 @@ export default function Experiences() {
         <Box
           sx={{
             textAlign: 'left',
-            mb: { xs: 10, md: 10 },
+            mb: { xs: 10, md: 5 },
           }}
         >
           <m.div variants={varFade().inUp}>
