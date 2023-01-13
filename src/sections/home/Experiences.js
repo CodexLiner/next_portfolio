@@ -85,7 +85,7 @@ export default function Experiences() {
         >
           <m.div variants={varFade().inUp}>
             <Typography component="div" variant="overline" sx={{ mb: 2, color: 'text.disabled' }}>
-              Jobs
+            {'<Jobs/>'}
             </Typography>
           </m.div>
           <m.div variants={varFade().inDown}>

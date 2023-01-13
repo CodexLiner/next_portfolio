@@ -97,11 +97,11 @@ export default function Skills() {
         >
           <m.div variants={varFade().inUp}>
             <Typography component="div" variant="overline" sx={{ mb: 2, color: 'text.disabled' }}>
-              Skills
+              {'<Skills/>'}
             </Typography>
           </m.div>
           <m.div variants={varFade().inDown}>
-            <Typography variant="h2">TACK STACK I USE</Typography>
+            <Typography variant="h2">TECH STACK I USE</Typography>
           </m.div>
         </Box>
 

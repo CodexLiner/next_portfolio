@@ -32,7 +32,7 @@ export default function RecentProjects() {
         >
           <m.div variants={varFade().inUp}>
             <Typography component="div" variant="overline" sx={{ mb: 2, color: 'text.disabled' }}>
-              Projects
+            {'<Projects/>'}
             </Typography>
           </m.div>
           <m.div variants={varFade().inDown}>

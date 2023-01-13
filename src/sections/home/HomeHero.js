@@ -146,25 +146,37 @@ export default function HomeHero() {
         <Container>
           <ContentStyle>
             <m.div ref={mainCursor} variants={varFade().inRight}>
-              <Typography variant="h3" sx={{ color: 'common.white' }}>
+              <Typography variant="h3" sx={{ fontFamily: 'cursive', fontWeight: 'light', color: 'common.white' }}>
                 Hello{' '}
-                <Typography component="span" variant="h3" sx={{ color: 'primary.main' }}>
+                <Typography
+                  component="span"
+                  variant="h3"
+                  sx={{ fontFamily: 'cursive', fontWeight: 'light', color: 'primary.main' }}
+                >
                   I'm
                 </Typography>
                 <br />
-                <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
+                <Typography
+                  component="span"
+                  variant="h1"
+                  sx={{ fontWeight: 'light', fontFamily: 'cursive', color: 'primary.main' }}
+                >
                   Gopal Meena
                 </Typography>
               </Typography>
               <m.div variants={varFade().inRight}>
-                <Typography variant="unset" sx={{ letterSpacing : '10', color: 'common.white' }}>
-                  I am a Software Engineer
+                <Typography
+                  sx={{ mt: 2, fontWeight: 'light', fontFamily: 'cursive', letterSpacing: '10', color: 'common.white' }}
+                >
+                  I'm an android developer by specialization and am a software engineer at heart
                 </Typography>
               </m.div>
             </m.div>
 
             <m.div variants={varFade().inRight}>
-              <Typography variant="h4" sx={{ color: 'common.white' }}>Programmer | Learner | Student</Typography>
+              <Typography variant="h5" sx={{ mt : -1.5 , fontFamily: 'cursive', fontWeight: 'light', color: 'common.white' }}>
+                Programmer | Learner | Student
+              </Typography>
             </m.div>
 
             <m.div variants={varFade().inRight}>

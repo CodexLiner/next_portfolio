@@ -29,6 +29,7 @@
     "js-cookie": "^3.0.1",
     "lodash": "^4.17.21",
     "lodash.isstring": "^4.0.1",
+    "magicmouse.js": "^1.2.1",
     "next": "^12.3.4",
     "nprogress": "^0.2.0",
     "numeral": "^2.0.6",
