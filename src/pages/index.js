@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 import Layout from '../layouts';
 import Page from '../components/Page';
 
-import { AllProjects, Github, HomeHero, Skills, Experiences , RecentProjects } from '../sections/home';
+import { AllProjects, Github, HomeHero, Skills, Experiences, RecentProjects } from '../sections/home';
 import ContactMe from 'src/sections/home/ContactMe';
 
 // ----------------------------------------------------------------------
@@ -24,16 +24,16 @@ HomePage.getLayout = function getLayout(page) {
 
 export default function HomePage() {
   return (
-    <Page title="Meenagopal24.me">
+    <Page title="meenagopal24.me">
       <RootStyle>
         <HomeHero />
         <ContentStyle>
           <Skills />
-          <RecentProjects/>
+          <RecentProjects />
           <Experiences />
           <AllProjects />
           <Github />
-          <ContactMe/>
+          <ContactMe />
         </ContentStyle>
       </RootStyle>
     </Page>

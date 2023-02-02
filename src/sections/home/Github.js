@@ -39,8 +39,8 @@ export default function Github() {
           <m.div animate={{ y: [-20, 0, -20] }} transition={{ duration: 4, repeat: Infinity }}>
             <Image
               visibleByDefault
-              alt="rocket"
-              src="https://i.ibb.co/4TsDWxn/me-unscreen.giff"
+              alt="me"
+              src="https://meenagopal24.me/assets/me-unscreen.gif"
               disabledEffect
               sx={{ maxWidth: 460 }}
             />

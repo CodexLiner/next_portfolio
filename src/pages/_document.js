@@ -24,10 +24,13 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
 
-          <meta name="theme-color" content={palette.light.primary.main} />
+          <meta name="theme-color" content={palette.light.primary.head} />
           <link rel="manifest" href="/manifest.json" />
 
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link href="https://fonts.googleapis.com/css2?family=Genos:wght@200;300;400&display=swap" rel="stylesheet" />
+
           <link
             href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap"
             rel="stylesheet"
@@ -35,7 +38,7 @@ export default class MyDocument extends Document {
 
           <meta
             name="description"
-            content="xperienced Teaching Assistant with a demonstrated history of working in the e-learning industry. Skilled in Communication, English, Engineering, Programming, and Android. Strong education professional with a Bachelor of Technology - BTech focused in Computer Science from Medi-Caps University."
+            content="Experienced Teaching Assistant with a demonstrated history of working in the e-learning industry. Skilled in Communication, English, Engineering, Programming, and Android. Strong education professional with a Bachelor of Technology - BTech focused in Computer Science from Medi-Caps University."
           />
           <meta name="keywords" content="meenagopal24,Gopal Meena,meena,meenagopal24,gopal,mg24,codexliner" />
           <meta name="author" content="Gopal Meena" />

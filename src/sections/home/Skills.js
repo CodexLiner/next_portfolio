@@ -135,9 +135,9 @@ export default function Skills() {
                   }}
                 />
                 <Typography variant="h5" paragraph>
-                  {card.title}
+                  {`<${card.title}/>`}
                 </Typography>
-                <Typography sx={{ color: isLight ? 'text.secondary' : 'common.white' }}>{card.description}</Typography>
+                <Typography  sx={{  fontWeight: 'extralight', color: isLight ? 'text.secondary' : 'common.white' }}>{card.description}</Typography>
               </CardStyle>
             </m.div>
           ))}

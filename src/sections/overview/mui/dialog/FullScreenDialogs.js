@@ -15,53 +15,34 @@ import {
 } from '@mui/material';
 // components
 import Iconify from '../../../../components/Iconify';
+import Iframe from 'react-iframe';
 
 // ----------------------------------------------------------------------
 
 const Transition = forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 
-export default function FullScreenDialogs() {
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+export default function FullScreenDialogs(props) {
+  const [open, setOpen] = useState(true);
 
   const handleClose = () => {
-    setOpen(false);
+    // setOpen(false);
+    props.callBack({ value: false, link: '', title: '' });
   };
 
   return (
     <>
-      <Button variant="outlined" color="error" onClick={handleClickOpen}>
-        Full Screen Dialogs
-      </Button>
-
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar position="relative">
           <Toolbar>
             <IconButton color="inherit" edge="start" onClick={handleClose}>
               <Iconify icon="eva:close-fill" />
             </IconButton>
-            <Typography variant="h6" sx={{ flex: 1, ml: 2 }}>
-              Sound
+            <Typography variant="h6" sx={{ fontWeight: 'light', flex: 1, ml: 2 }}>
+              {props.title}
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              Save
-            </Button>
           </Toolbar>
         </AppBar>
-        <List>
-          <ListItemButton>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItemButton>
-
-          <Divider />
-
-          <ListItemButton>
-            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
-          </ListItemButton>
-        </List>
+        <Iframe url={props.link} width="100%" height="100%" frameBorder="none" />
       </Dialog>
     </>
   );

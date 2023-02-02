@@ -6,36 +6,41 @@ import Iconify from '../../components/Iconify';
 import { MotionContainer, varFade } from '../../components/animate';
 import CustomCursor from '../../components/CustomCursor';
 
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import FullScreenDialogs from '../overview/mui/dialog/FullScreenDialogs';
 
 // ----------------------------------------------------------------------
 
-const SOCIAL = [ {
+const SOCIAL = [
+  {
     img: 'git.svg',
+    name: 'github',
     link: 'https://github.com/CodexLiner',
   },
   {
     img: 'in.svg',
+    name: 'linkedin',
     link: 'https://www.linkedin.com/in/meenagopal24',
   },
- 
+
   {
     img: 'tweet.svg',
+    name: 'twitter',
     link: 'https://twitter.com/meenagopal_24',
   },
   {
     img: 'insta.svg',
+    name: 'instagram',
     link: 'https://www.instagram.com/meenagopal24',
   },
   {
     img: 'wa.svg',
-    link: 'wa.me/+919399846909',
+    name: 'whatsapp',
+    link: 'https://wa.me/+919399846909',
   },
 ];
 
-const social_open = (link) => {
-  window.open(link, '_blank');
-};
+const my_font = 'Genos';
 
 const RootStyle = styled(m.div)(({ theme }) => ({
   position: 'relative',
@@ -95,13 +100,24 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     display: 'none',
   },
+  [theme.breakpoints.down('mobile')]: {
+    display: 'none',
+  },
 }));
 
 // ----------------------------------------------------------------------
 
 export default function HomeHero() {
+  const [open, setopen] = useState({ value: false, link: '', title: '' });
   const mainCursor = useRef(null);
   const secondary = useRef(null);
+  const clickAction = (props) => {
+    setopen({ value: props.value, link: props.link, title: props.title });
+  };
+
+  const openLink = (link) => {
+    window.open(link, '_blank');
+  };
 
   const position = useRef({
     mouseX: 0,
@@ -173,12 +189,12 @@ export default function HomeHero() {
         <Container>
           <ContentStyle>
             <m.div ref={mainCursor} variants={varFade().inRight}>
-              <Typography variant="h3" sx={{ fontFamily: 'cursive', fontWeight: 'light', color: 'common.white' }}>
+              <Typography variant="h3" sx={{ fontFamily: `${my_font}`, fontWeight: 'light', color: 'common.white' }}>
                 Hello{' '}
                 <Typography
                   component="span"
                   variant="h3"
-                  sx={{ fontFamily: 'cursive', fontWeight: 'light', color: 'primary.main' }}
+                  sx={{ fontFamily: `${my_font}`, fontWeight: 'light', color: 'primary.main' }}
                 >
                   I'm
                 </Typography>
@@ -186,14 +202,21 @@ export default function HomeHero() {
                 <Typography
                   component="span"
                   variant="h1"
-                  sx={{ fontWeight: 'light', fontFamily: 'cursive', color: 'primary.main' }}
+                  sx={{ fontWeight: 'light', fontFamily: `${my_font}`, color: 'primary.main' }}
                 >
                   Gopal Meena
                 </Typography>
               </Typography>
               <m.div variants={varFade().inRight}>
                 <Typography
-                  sx={{ mt: 2, fontWeight: 'light', fontFamily: 'cursive', letterSpacing: '10', color: 'common.white' }}
+                  variant="h4"
+                  sx={{
+                    mt: 2,
+                    fontWeight: 'light',
+                    fontFamily: `${my_font}`,
+                    letterSpacing: '1',
+                    color: 'common.white',
+                  }}
                 >
                   I'm an android developer by specialization and am a software engineer at heart
                 </Typography>
@@ -210,15 +233,16 @@ export default function HomeHero() {
             </m.div> */}
 
             <m.div variants={varFade().inRight}>
-              <NextLink href="/resume" target="_blank" passHref>
-                <Button
-                  size="large"
-                  variant="contained"
-                  startIcon={<Iconify icon={'mdi:resume'} width={20} height={20} />}
-                >
-                  Download Resume
-                </Button>
-              </NextLink>
+              <Button
+                onClick={() =>
+                  clickAction({ value: true, link: 'https://meenagopal24.me/assets/resume.pdf', title: 'Resume' })
+                }
+                size="large"
+                variant="outlined"
+                startIcon={<Iconify icon={'mdi:resume'} width={20} height={20} />}
+              >
+                Download Resume
+              </Button>
             </m.div>
 
             <Stack spacing={2.5}>
@@ -228,31 +252,40 @@ export default function HomeHero() {
                 </Typography>
               </m.div>
 
-              <Stack
-                ref={secondary}
-                direction="row"
-                spacing={1.5}
-                sx={{ cursor: 'pointer' }}
-                justifyContent={{ xs: 'left', md: 'flex-start' }}
-              >
-                {/* {['ic_sketch', 'ic_figma', 'ic_js', 'ic_ts', 'ic_nextjs'].map((resource) => (
-                  <m.img
-                    key={resource}
-                    variants={varFade().inRight}
-                    src={`https://minimal-assets-api.vercel.app/assets/images/home/${resource}.svg`}
-                  />
-                ))} */}
-
+              <Stack ref={secondary} direction="row" spacing={1.5} justifyContent={{ xs: 'left', md: 'flex-start' }}>
+                {open.value ? (
+                  <FullScreenDialogs key={Math.random()} callBack={clickAction} link={open.link} title={open.title} />
+                ) : null}
                 {SOCIAL.map((resource) => (
-                  <m.img
-                    className="pointer"
-                    onClick={() => {
-                      social_open(resource.link);
-                    }}
-                    key={resource}
-                    variants={varFade().inRight}
-                    src={`/images/social/${resource.img}`}
-                  />
+                  <>
+                    <m.img
+                      width={25}
+                      height={25}
+                      className="pointer"
+                      onClick={() => openLink(resource.link)}
+                      key={resource}
+                      variants={varFade().inRight}
+                      src={`/images/social/${resource.img}`}
+                    />
+                    <Typography
+                      className="pointer"
+                      onClick={() => openLink(resource.link)}
+                      variant="overline"
+                      sx={{
+                        '@media (max-width:600px)': {
+                          display: 'none',
+                        },
+                        alignSelf: 'center',
+                        alignContent: 'center',
+                        textAlign: 'left',
+                        fontWeight: 'light',
+                        fontFamily: `${my_font}`,
+                        color: 'primary.light',
+                      }}
+                    >
+                      {resource.name}
+                    </Typography>
+                  </>
                 ))}
               </Stack>
             </Stack>
@@ -263,3 +296,5 @@ export default function HomeHero() {
     </MotionContainer>
   );
 }
+
+// export getSocialLinks()

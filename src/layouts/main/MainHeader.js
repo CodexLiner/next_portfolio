@@ -78,19 +78,14 @@ export default function MainHeader() {
           <Logo />
 
           <Label color="info" sx={{ ml: 2 }}>
-           Meenagopal24.me
+            Meenagopal24.me
           </Label>
           <Box sx={{ flexGrow: 1 }} />
 
           {/* {isDesktop && <MenuDesktop isOffset={isOffset} isHome={isHome} navConfig={navConfig} />} */}
 
-          <Button
-            variant="contained"
-            target="_blank"
-            rel="noopener"
-            href="/"
-          >
-            Hire Now
+          <Button variant="outlined" rel="noopener" href="#connect">
+            Hire me
           </Button>
 
           {/* {!isDesktop && <MenuMobile isOffset={isOffset} isHome={isHome} navConfig={navConfig} />} */}

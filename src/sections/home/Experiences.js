@@ -34,7 +34,7 @@ const TIMELINES = [
   {
     key: 2,
     title: 'Internship',
-    des: 'Netlux Systems Pvt. Ltd.r',
+    des: 'Netlux Systems Pvt. Ltd',
     time: 'June 2022',
     color: 'primary',
     icon: <Iconify icon="arcticons:training-peaks" width={24} height={24} />,
@@ -59,7 +59,7 @@ const TIMELINES = [
     key: 5,
     title: 'Freelancing',
     des: 'Freelancing as an android developer',
-    time: '11:00 am',
+    time: 'January 2021',
     color: 'success',
     icon: <Iconify icon="simple-icons:freelancer" width={24} height={24} />,
   },
@@ -67,7 +67,7 @@ const TIMELINES = [
     key: 6,
     title: 'Beginning',
     des: 'began my journey',
-    time: 'Mid 2020',
+    time: 'August 2020',
     color: 'warning',
     icon: <Iconify icon="arcticons:birthday-calendar" width={24} height={24} />,
   }
@@ -94,7 +94,7 @@ export default function Experiences() {
         </Box>
         <Block variants={varFade().inUp} title="">
           <Timeline position="alternate">
-            {TIMELINES.map((item) => (
+            {TIMELINES .map((item) => (
               <TimelineItem key={item.key}>
                 <TimelineOppositeContent>
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>

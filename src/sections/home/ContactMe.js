@@ -22,7 +22,7 @@ export default function ContactMe() {
             mb: { xs: 10, md: 5 },
           }}
         >
-          <m.div variants={varFade().inDown}>
+          <m.div id="connect" variants={varFade().inDown}>
             <Typography variant="h2">CONNECT WITH ME</Typography>
           </m.div>
         </Box>
