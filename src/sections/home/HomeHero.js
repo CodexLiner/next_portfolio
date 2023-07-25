@@ -182,7 +182,7 @@ export default function HomeHero() {
         <HeroImgStyle
           alt="hero"
           // src="https://minimal-assets-api.vercel.app/assets/images/home/hero.png"
-          src="https://meenagopal24.me/assets/hero11.png"
+          src="./../images/hero_main.png"
           variants={varFade().inUp}
         />
 

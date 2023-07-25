@@ -40,7 +40,7 @@ export default function Github() {
             <Image
               visibleByDefault
               alt="me"
-              src="https://meenagopal24.me/assets/me-unscreen.gif"
+              src="https://i.ibb.co/4TsDWxn/me-unscreen.giff"
               disabledEffect
               sx={{ maxWidth: 460 }}
             />

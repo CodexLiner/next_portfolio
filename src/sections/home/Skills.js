@@ -10,20 +10,20 @@ import { Stack } from '@mui/system';
 const CARDS = [
   {
     // icon: 'https://minimal-assets-api.vercel.app/assets/icons/ic_design.svg',
-    icon: 'https://meenagopal24.me/assets/web.svg',
+    icon: './../images/web.svg',
     title: 'Web Development',
     description: 'Web development is the work involved in developing a website for the Internet or an intranet.',
   },
   {
     // icon: 'https://minimal-assets-api.vercel.app/assets/icons/ic_code.svg',
-    icon: 'https://meenagopal24.me/assets/mobile.svg',
+    icon: './../images/android.svg',
     title: 'Mobile App Development',
     description:
       'Mobile application development is the process of creating software applications that run on a mobile device.',
   },
   {
     // icon: '/logo/logo_single.svg',
-    icon: 'https://meenagopal24.me/assets/ext.svg',
+    icon: './../images/exten.svg',
     title: 'Browser Extension',
     description: 'A browser extension is a small software module for customizing a web browser.',
   },
@@ -137,7 +137,9 @@ export default function Skills() {
                 <Typography variant="h5" paragraph>
                   {`<${card.title}/>`}
                 </Typography>
-                <Typography  sx={{  fontWeight: 'extralight', color: isLight ? 'text.secondary' : 'common.white' }}>{card.description}</Typography>
+                <Typography sx={{ fontWeight: 'extralight', color: isLight ? 'text.secondary' : 'common.white' }}>
+                  {card.description}
+                </Typography>
               </CardStyle>
             </m.div>
           ))}

@@ -12,7 +12,7 @@ import {
   Typography,
   ListItemText,
   ListItemButton,
-} from '@mui/material';
+} from '@mui/material'
 // components
 import Iconify from '../../../../components/Iconify';
 import Iframe from 'react-iframe';
