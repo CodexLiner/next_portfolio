@@ -24,7 +24,7 @@ HomePage.getLayout = function getLayout(page) {
 
 export default function HomePage() {
   return (
-    <Page title="meenagopal24.me">
+    <Page title="meenagopal24.live">
       <RootStyle>
         <HomeHero />
         <ContentStyle>

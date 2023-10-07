@@ -77,7 +77,7 @@ export default function () {
                 }),
               }}
             >
-              More Porjects, That I Have Build
+              More Projects That I Have Built
             </Typography>
           </m.div>
         </ContentStyle>
